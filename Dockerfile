@@ -1,6 +1,5 @@
-FROM node:10-alpine
+FROM node:12-alpine
 WORKDIR /app
-COPY yarn.lock package.json
-RUN yarn install --production
 COPY . .
+RUN yarn install --production
 CMD ["node", "/app/src/index.js"]
